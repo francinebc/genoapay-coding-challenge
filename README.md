@@ -1,7 +1,13 @@
 # genoapay-coding-challenge
 
-To run this project:
+## To run this project:
 
 Download or clone from Github and open project in eclipse.
-Run tests/StockTests.java as a JUnit test.
-Can also run this as a command line program by writing:
+Run tests as JUnit tests.
+
+## To run this on your command line:
+
+```
+java -jar coding-challenge.jar
+```
+You will be prompted for stock prices
