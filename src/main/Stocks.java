@@ -1,9 +1,27 @@
 package main;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Stocks {
 
 	public static void main(String[] args) {
-		System.out.println("Hello yall");
+		readStockPrices();
+	}
+	
+	public static void readStockPrices() {
+	    System.out.println("Please enter your stock prices seperated by [space]");
+	    Scanner scanner = new Scanner(System.in);
+	    try{
+			int[] stockPrices = Arrays.stream(scanner.nextLine().split(" "))
+		    	    .mapToInt(i -> Integer.parseInt(i))
+		    	    .toArray();
+			System.out.println("Your maximum profit is: " + getMaxProfit(stockPrices));	    
+	    }catch(NumberFormatException e) {
+	    	System.out.println("Please enter only numerical values");
+	    	readStockPrices();
+	    }
+	   
 	}
 	
 	/**
@@ -13,7 +31,7 @@ public class Stocks {
 	 * @param int[] stockPrices
 	 * @return int bestProfit
 	 */	
-	public int getMaxProfit(int[] stockPrices) {
+	public static int getMaxProfit(int[] stockPrices) {
 		if(stockPrices.length <= 1) return 0;
 		int min = Integer.MAX_VALUE;
 		int best = 0;
@@ -31,7 +49,7 @@ public class Stocks {
 	 * @param int[] stockPrices
 	 * @return int bestProfit
 	 */
-	public int getMaxProfitNegativeOk(int[] stockPrices) {
+	public static int getMaxProfitNegativeOk(int[] stockPrices) {
 		if(stockPrices.length <= 1) return 0;
 		int best = Integer.MIN_VALUE;
 		for(int i=0; i<stockPrices.length; i++) {

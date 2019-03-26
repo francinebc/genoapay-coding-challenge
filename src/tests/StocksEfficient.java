@@ -5,8 +5,6 @@ import org.junit.Test;
 import main.Stocks;
 
 public class StocksEfficient {
-
-	Stocks main = new Stocks();
 	
 	@Test
 	public void firstTest() {
@@ -16,55 +14,55 @@ public class StocksEfficient {
 	@Test
 	public void noInput() {
 		int[] stockPrices = {};
-		assertEquals(0, main.getMaxProfit(stockPrices));
+		assertEquals(0, Stocks.getMaxProfit(stockPrices));
 	}
 	
 	@Test
 	public void oneInput() {
 		int[] stockPrices = {10};
-		assertEquals(0, main.getMaxProfit(stockPrices));
+		assertEquals(0, Stocks.getMaxProfit(stockPrices));
 	}
 	
 	@Test
 	public void noProfit() {
 		int[] stockPrices = {10, 9};
-		assertEquals(0, main.getMaxProfit(stockPrices));
+		assertEquals(0, Stocks.getMaxProfit(stockPrices));
 	}
 	
 	@Test
 	public void profit() {
 		int[] stockPrices = {4, 9};
-		assertEquals(5, main.getMaxProfit(stockPrices));
+		assertEquals(5, Stocks.getMaxProfit(stockPrices));
 	}
 	
 	@Test
 	public void standardCase() {
 		int[] stockPrices = {10, 7, 5, 8, 11, 9};
-		assertEquals(6, main.getMaxProfit(stockPrices));
+		assertEquals(6, Stocks.getMaxProfit(stockPrices));
 	}
 	
 	@Test
 	public void notHighestSell() {
 		int[] stockPrices = {8, 17, 5, 8, 16, 9};
-		assertEquals(11, main.getMaxProfit(stockPrices));
+		assertEquals(11, Stocks.getMaxProfit(stockPrices));
 	}
 	
 	@Test
 	public void notLowestBuy() {
 		int[] stockPrices = {13, 17, 5, 8, 16, 4, 15};
-		assertEquals(11, main.getMaxProfit(stockPrices));
+		assertEquals(11, Stocks.getMaxProfit(stockPrices));
 	}
 	
 	@Test
 	public void middleRange() {
 		int[] stockPrices = {13, 17, 5, 8, 10, 4, 8};
-		assertEquals(5, main.getMaxProfit(stockPrices));
+		assertEquals(5, Stocks.getMaxProfit(stockPrices));
 	}
 	
 	@Test
 	public void noDifference() {
 		int[] stockPrices = {9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9};
-		assertEquals(0, main.getMaxProfit(stockPrices));
+		assertEquals(0, Stocks.getMaxProfit(stockPrices));
 	}
 	
 	@Test
@@ -91,7 +89,7 @@ public class StocksEfficient {
 				54,	35,	81,	86,	96,
 				47,	88,	70,	94,	16
 		};
-		assertEquals(99, main.getMaxProfit(stockPrices));
+		assertEquals(99, Stocks.getMaxProfit(stockPrices));
 	}
 	
 }
